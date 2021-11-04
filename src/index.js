@@ -139,7 +139,7 @@ app.put("/account", verifyExistsAccountByCpf, (request, response) => {
 app.delete("/account", verifyExistsAccountByCpf, (request, response) => {
     const { customer } = request;
 
-    customers.splice(customer, 1);
+    customers.splice(customers.indexOf(customer), 1);
 
     return response.status(200).json(customers);
 });
